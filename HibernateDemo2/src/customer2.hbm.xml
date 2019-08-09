@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.deloitte.cms.model.Customer" table="hr.Customertypes">
+	
+		<id name="customerId" type="int" column="CID">
+			<generator class="assigned"/>
+		</id>
+		
+		<property name="customerName" column="CustName"/>
+		<property name="customerAddress" column="CustAddress"/>
+		<property name="billAmount" />
+			</class>
+		
+		<joined-subclass name="com.deloitte.cms.model.PremiumCustomer"
+		extends="com.deloitte.cms.model.Customer"
+		table="hr.PremiumCust">
+		<key column="customerId"></key>
+		<property name="rewardPoints"></property>
+</joined-subclass>
+
+</hibernate-mapping>

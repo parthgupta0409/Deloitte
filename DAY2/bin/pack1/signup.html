@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validate()
+{
+	var usern= document.getElementById("username").value
+    var userp=document.getElementById("password").value
+    var erru=document.getElementById("errusername")
+    var errp=document.getElementById("errpassword")
+	if(usern.length==0)
+		{
+		erru.innerHTML="<font color=red>Please enter the username</font>";
+		return false;
+		}
+	else if(userp.length==0)
+	{
+		erru.innerHTML="";
+		errp.innerHTML="<font color=red>Please enter password</font>";
+	    return false;
+	}
+	else if(userp.length<6)
+	{
+		erru.innerHTML="";
+		errp.innerHTML="<font color=red>Please enter valid password</font>";
+		return false;
+	}
+	else
+		{
+		errp.innerHTML="";
+		alert("Most welcome:"+usern);
+		}
+	}
+</script>
+</head>
+<body>
+<center>
+<form action="success.html" onsubmit="return validate()">
+<table cellspacing="10" cellpadding="10" align="center">
+<tr><td>Username</td><td><input type="text" id="username" name="username"></td>
+<td><span id="errusername"></span></td>
+</tr>
+<tr><td>Password</td><td><input type="password" id="password" name="password"></td>
+<td><span id="errpassword"></span></td></tr>
+<tr><td>Confirm Password</td><td><input type="password" id="confirm password" name="confirm password"></td></tr>
+<tr>
+<td>Gender</td>
+<td>
+<input type="radio" id="male" name="gender" value="male">male
+<input type="radio" id="female" name="gender" value="female">female
+<input type="radio" id="others" name="gender" value="others">others
+</td>
+</tr>
+<tr>
+<td>updates</td>
+<td>
+<input type="checkbox" id="email" name="updates" value="email">email
+<input type="checkbox" id="phone" name="updates" value="phone">phone
+<input type="checkbox" id="others" name="updates" value="others">others
+</td>
+</tr>
+<tr>
+<td>departmnt</td>
+<td>
+<select id="department" name="department">
+<option value="hr">hr</option>
+<option value="pr">pr</option>
+<option value="in">in</option>
+<option value="ma">ma</option>
+</select>
+</td>
+</tr>
+<tr><td><input type="submit" value="Login"></td><td> <input type="reset" value="clear"></td></tr>
+</table>
+</form>
+</center>
+</body>
+</html>
+</body>
+</html>
